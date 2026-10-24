@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import LegalPage from '../../components/LegalPage';
-import { SUPPORT_EMAIL, UPDATED } from '../../lib/links';
+import { SUPPORT_EMAIL } from '../../lib/links';
 export const metadata: Metadata = { title: 'Privacy Policy', description: 'How HeyLucy collects, uses and protects information for businesses and their callers.', alternates: { canonical: '/privacy' } };
 export default function Privacy() {
   const mail = <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>;
-  return <LegalPage eyebrow="PRIVACY" title="Privacy Policy" updated={UPDATED}>
+  return <LegalPage eyebrow="PRIVACY" title="Privacy Policy" updated="October 24, 2026">
     <p>HeyLucy (“HeyLucy”, “we”, “us”) provides Lucy, an AI phone receptionist for businesses. HeyLucy is operated by its founder as a sole proprietorship based in Iowa, USA. This policy explains what information we collect, why, who we share it with, and the choices you have. Questions: {mail}.</p>
 
     <h2>Who this policy covers</h2>
@@ -27,6 +27,7 @@ export default function Privacy() {
       <li>Caller phone number, the name they give, the reason for the call and the outcome (for example, an appointment booked or a message taken).</li>
       <li>Appointment details: date, time, service and notes.</li>
       <li>What the caller says is converted to text so Lucy can respond. If a caller leaves a voicemail, the recording and its transcription are stored so the business can review it.</li>
+      <li>Lucy’s AI voice: when it is turned on for a business, the call audio is sent live to OpenAI so Lucy can understand the caller and speak her replies. A written transcript of the call is kept with the call log so the business can review it.</li>
     </ul>
     <h3>From Google Calendar (only if you connect it)</h3>
     <p>If you choose to connect Google Calendar, Lucy reads the start and end times of events in your primary calendar so she never books over them, and — if you turn on “Sync appointments” — the event titles and times so they appear on Lucy’s calendar. Lucy also creates, moves and deletes the events for appointments she books. See “Google user data” below.</p>
@@ -55,6 +56,7 @@ export default function Privacy() {
     <p>We share information only with service providers that help us run HeyLucy, under their own privacy and security commitments:</p>
     <ul>
       <li><strong>Twilio</strong> — phone numbers, calls, speech-to-text, voicemail and text-message verification codes.</li>
+      <li><strong>OpenAI</strong> — Lucy’s AI voice (when it is turned on for a business): the call audio, the business details Lucy needs to answer (such as hours, services and FAQs) and the caller’s own appointments. Under OpenAI’s API terms, this data is not used to train their models.</li>
       <li><strong>Google</strong> — Google Calendar, only if you connect it.</li>
       <li><strong>Stripe</strong> — subscription payments.</li>
       <li><strong>Render</strong> and <strong>Vercel</strong> — hosting for our servers, database and website.</li>
