@@ -3,4 +3,5 @@ export const APP_URL = (process.env.LUCY_APP_URL || 'https://app.heylucy.org').r
 export const SIGN_IN_URL = `${APP_URL}/`;
 export const SIGN_UP_URL = `${APP_URL}/?signup=1`;
 export const SUPPORT_EMAIL = 'support@heylucy.org';
+export const BUSINESS_EMAIL = 'ruddy.heylucy@gmail.com';
 export const UPDATED = 'October 17, 2026';
